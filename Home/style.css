@@ -337,3 +337,28 @@ footer .links {
 .newsletter button:hover {
     background-color: #357abd;
 }
+
+
+.loginBtn {
+    padding: 12px 24px;
+    background-color: #ff7b54;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .loginBtn:hover {
+    background-color: #ff5722;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .loginBtn:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }

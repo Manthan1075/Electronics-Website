@@ -15,6 +15,9 @@ const products = [
     { name: 'Xiaomi TV 4', img: './Images/prod-14.jpeg', price: '25000₹' },
     { name: 'Party Speaker', img: './Images/prod-15.jpeg', price: '6050₹' },
   ];
+ document.querySelector(".loginBtn").addEventListener("click",()=>{
+    window.location.href = "/Register-pages/Register.html";
+  })
   
   const cardSection = document.querySelector('.card-section');
   
