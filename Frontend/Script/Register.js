@@ -29,5 +29,5 @@ signupForm.addEventListener("submit", (e) => {
 });
 
 function redirectToHome() {
-  window.location.href = "../Home/Home.html"; 
+  window.location.href = "../Pages/Home.html"; 
 }
