@@ -38,6 +38,13 @@ const products = [
 </section>
 
     `;
+
+    const buyBtn = card.querySelector('.buy-btn');
+    buyBtn.addEventListener('click', () => {
+        localStorage.setItem('selectedProduct', JSON.stringify(product));
+        alert(`${product.name} added to cart!`);
+        window.location.href = "../Pages/Cart.html";
+    });
   
     cardSection.appendChild(card);
   });
@@ -45,5 +52,5 @@ const products = [
   export const user = {
     name: 'John Doe',
     age: 25,
-    email: 'manthan'
+    email: 'john.doe@example.com'
   }
