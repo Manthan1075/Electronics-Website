@@ -30,7 +30,3 @@ if (!productData) {
 }else{
     createCard()
 }
-
-// // card.innerHTML = `
-
-// `

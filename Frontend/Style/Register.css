@@ -14,6 +14,24 @@
     color: #fff;
   }
 
+.back {
+  all: unset;
+  position: fixed;
+  top: 5%;
+  left: 2%;
+  border: 1px solid #ffffff;
+  padding: 10px 12px;
+  border-radius: 5px;
+  background: #ddd;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s ease, color  0.2s ease;
+  &:hover {
+    background: #000000;
+    color: #ffffff;
+  }
+}
+
   .container {
     background: rgba(30, 41, 59, 0.9);
     width: 420px;
