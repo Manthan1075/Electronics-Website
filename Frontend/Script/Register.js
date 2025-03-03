@@ -19,15 +19,6 @@ signupBtn.addEventListener('click', () => {
 });
 
 
-loginForm.addEventListener("submit", (e) => {
-  e.preventDefault(); 
-  redirectToHome(); 
-});
-signupForm.addEventListener("submit", (e) => {
-  e.preventDefault(); 
-  redirectToHome(); 
-});
-
 function redirectToHome() {
   window.location.href = "../Pages/Home.html"; 
 }
