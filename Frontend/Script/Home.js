@@ -16,15 +16,56 @@ const products = [
   { name: 'Party Speaker', img: '../Assets/Images/prod-15.jpeg', price: '6050₹' },
 ];
 
-document.querySelector(".loginBtn").addEventListener("click",()=>{
-  window.location.href = "../Pages/Register.html";
-});
-
 const searchInput = document.querySelector(".searchbox input");
 const searchBtn = document.querySelector(".searchbox button");
 const cardSection = document.querySelector('.card-section');
 
-// Function to display products
+document.addEventListener('DOMContentLoaded', () => {
+  const loginBtn = document.querySelector(".loginBtn");
+  const profileContainer = document.querySelector(".profile-container");
+  const profileName = document.getElementById("profile-name");
+  const profileEmail = document.getElementById("profile-email");
+  const profileMobile = document.getElementById("profile-mobile");
+  const profileAge = document.getElementById("profile-age");
+  const logoutBtn = document.querySelector(".logoutBtn");
+  
+  // Check if user is logged in
+  const userData = localStorage.getItem('signupData');
+  
+  if (userData) {
+    // User is logged in
+    const user = JSON.parse(userData);
+    
+    // Hide login button and show profile
+    loginBtn.style.display = "none";
+    profileContainer.style.display = "block";
+    
+    // Populate user details
+    profileName.textContent = `Name: ${user.name}`;
+    profileEmail.textContent = `Email: ${user.email}`;
+    profileMobile.textContent = `Mobile: ${user.mno}`;
+    profileAge.textContent = `Age: ${user.age}`;
+    
+    // Handle logout
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem('signupData');
+      window.location.reload();
+    });
+  } else {
+    // User is not logged in
+    loginBtn.style.display = "block";
+    profileContainer.style.display = "none";
+    
+    // Keep the existing login button functionality
+    loginBtn.addEventListener("click", () => {
+      window.location.href = "../Pages/Register.html";
+    });
+  }
+
+  // Display products
+  displayProducts(products);
+});
+
 function displayProducts(productsToShow) {
   cardSection.innerHTML = ''; 
   
@@ -55,8 +96,6 @@ function displayProducts(productsToShow) {
   });
 }
 
-displayProducts(products);
-
 function handleSearch() {
   const searchTerm = searchInput.value.toLowerCase().trim();
   
@@ -68,7 +107,6 @@ function handleSearch() {
     );
     displayProducts(filteredProducts);
   }
-  
 }
 
 searchBtn.addEventListener("click", () => {
@@ -81,4 +119,3 @@ searchInput.addEventListener("input", handleSearch);
 document.querySelector('.Explore').addEventListener("click",()=> {
   window.scrollBy({ top: 800, behavior: 'smooth' });
 });
-
