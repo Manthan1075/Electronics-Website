@@ -82,8 +82,3 @@ document.querySelector('.Explore').addEventListener("click",()=> {
   window.scrollBy({ top: 800, behavior: 'smooth' });
 });
 
-export const user = {
-  name: 'John Doe',
-  age: 25,
-  email: 'john.doe@example.com'
-};

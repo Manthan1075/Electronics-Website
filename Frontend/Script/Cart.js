@@ -92,10 +92,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 totalAmount: document.getElementById('total').textContent
             };
             
-            console.log('Order placed:', orderDetails);
             alert('Order placed successfully! Thank you for shopping with Digital Electronics.');
             
             localStorage.removeItem('selectedProduct');
+            localStorage.setItem('ProductOdered',JSON.stringify(orderDetails))
             window.location.href = './Home.html';
         });
     }

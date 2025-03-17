@@ -18,6 +18,15 @@ signupBtn.addEventListener('click', () => {
   loginBtn.classList.remove('active');
 });
 
+signupForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  window.location.href = "../Pages/Home.html";
+})
+loginForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  window.location.href = "../Pages/Home.html";
+})
+
 
 function redirectToHome() {
   window.location.href = "../Pages/Home.html"; 
