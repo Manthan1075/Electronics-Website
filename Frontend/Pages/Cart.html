@@ -3,66 +3,139 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cart</title>
+    <title>Your Cart | Digital Electronics</title>
     <link rel="stylesheet" href="../Style/Cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <div class="logo">
-        <h3>Digital Electronics</h3>
+        <h3><i class="fas fa-laptop-code"></i> Digital Electronics</h3>
       </div>
-     
+
       <nav>
-        <a href="./Home.html"> Home </a>
-        <a href="./About.html"> About </a>
-        <a href="./Contact.html"> Contact </a>
-        <a href="./Cart.html"> Cart </a>
+        <a href="./Home.html">Home</a>
+        <a href="./About.html">About</a>
+        <a href="./Contact.html">Contact</a>
+        <a href="./Cart.html" class="active"
+          > Cart</a
+        >
+        <a href="./OrderDetails.html"> Order </a>
+
         <button
           class="loginBtn"
           onclick="window.location.href = './Register.html'"
         >
-          Login
+           Login
         </button>
       </nav>
     </header>
+
     <div class="container">
-      <div class="cart-section"></div>
-    </div>
-    <div>
-      <form action="">
-        <h3>Fill Form To Continue</h3>
-        <div class="order-form">
-          <input type="text" name="fullName" placeholder="Full Name" required />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            required
-          />
-          <input
-            type="tel"
-            name="phoneNumber"
-            placeholder="Phone Number"
-            pattern="[0-9]{10}"
-            required
-          />
-          <input
-            type="text"
-            name="shippingAddress"
-            placeholder="Shipping Address"
-            required
-          />
-          <select name="paymentMethod" required>
-            <option value="">Select Payment Method</option>
-            <option value="credit">Credit Card</option>
-            <option value="debit">Debit Card</option>
-            <option value="upi">UPI</option>
-            <option value="cod">Cash on Delivery</option>
-          </select>
-          <button type="submit" class="order-btn">Place Order</button>
+      <div class="page-title">
+        <h1>Your Shopping Cart</h1>
+        <p>Review your items and complete checkout</p>
+      </div>
+
+      <div class="cart-container">
+        <div class="cart-items">
+          <h2><i class="fas fa-shopping-basket"></i> Cart Items</h2>
+          <div class="cart-section"></div>
+          <div class="cart-summary">
+            <div class="summary-row">
+              <span>Subtotal:</span>
+              <span id="subtotal">₹0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping:</span>
+              <span id="shipping">₹50.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Tax (18%):</span>
+              <span id="tax">₹0.00</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total:</span>
+              <span id="total">₹0.00</span>
+            </div>
+          </div>
         </div>
-      </form>
+
+        <div class="checkout-form">
+          <form id="orderForm">
+            <h2><i class="fas fa-credit-card"></i> Checkout Details</h2>
+
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phoneNumber">Phone Number</label>
+              <input
+                type="tel"
+                id="phoneNumber"
+                name="phoneNumber"
+                placeholder="10-digit mobile number"
+                pattern="[0-9]{10}"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="shippingAddress">Shipping Address</label>
+              <textarea
+                id="shippingAddress"
+                name="shippingAddress"
+                placeholder="Enter your complete address"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="paymentMethod">Payment Method</label>
+              <select id="paymentMethod" name="paymentMethod" required>
+                <option value="">Select Payment Method</option>
+                <option value="credit">Credit Card</option>
+                <option value="debit">Debit Card</option>
+                <option value="upi">UPI</option>
+                <option value="cod">Cash on Delivery</option>
+              </select>
+            </div>
+
+
+            <button type="submit" class="order-btn">
+              <i class="fas fa-shopping-bag"></i> Place Order
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
+
     <script type="module" src="../Script/Cart.js"></script>
   </body>
 </html>

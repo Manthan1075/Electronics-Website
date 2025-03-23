@@ -19,8 +19,23 @@
         <a href="./About.html"> About </a>
         <a href="./Contact.html"> Contact </a>
         <a href="./Cart.html"> Cart </a>
+        <a href="./OrderDetails.html"> Order </a>
         <button class="loginBtn">Login</button>
       </nav>
+      <!-- Add this after the login button in your header -->
+      <div class="profile-container" style="display: none">
+        <button class="profileBtn">Profile</button>
+        <div class="profile-popover">
+          <div class="user-info">
+            <h4>User Details</h4>
+            <p id="profile-name"></p>
+            <p id="profile-email"></p>
+            <p id="profile-mobile"></p>
+            <p id="profile-age"></p>
+          </div>
+          <button class="logoutBtn">Logout</button>
+        </div>
+      </div>
     </header>
 
     <section class="sec-1">

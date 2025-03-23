@@ -18,16 +18,30 @@ signupBtn.addEventListener('click', () => {
   loginBtn.classList.remove('active');
 });
 
+signupForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const signupFormData = {
+    name: signupForm.name.value,
+    email: signupForm.email.value,
+    password: signupForm.password.value,
+    mno: signupForm.mno.value,
+    age: signupForm.age.value
+  };
+  localStorage.setItem('signupData', JSON.stringify(signupFormData));
+  
+  window.location.href = "../Pages/Home.html";
+})
+loginForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const loginFormData = {
+    email: loginForm.email.value,
+    password: loginForm.password.value
+  };
+  localStorage.setItem('loginData', JSON.stringify(loginFormData));
+  window.location.href = "../Pages/Home.html";
+})
 
-loginForm.addEventListener("submit", (e) => {
-  e.preventDefault(); 
-  redirectToHome(); 
-});
-signupForm.addEventListener("submit", (e) => {
-  e.preventDefault(); 
-  redirectToHome(); 
-});
 
 function redirectToHome() {
-  window.location.href = "../Pages/Home.html"; 
+  window.location.href = "../Pages/Home.html";
 }
