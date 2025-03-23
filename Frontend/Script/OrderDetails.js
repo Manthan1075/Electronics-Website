@@ -34,6 +34,7 @@ function createOrderCard(order) {
       <div class="card-header">
         <h2>Order Details</h2>
         <div class="order-number">Order #${Math.floor(100000 + Math.random() * 900000)}</div>
+        <button class="cancel-order-btn">Cancel Order</button>
       </div>
       
       <div class="section customer-info">
@@ -108,5 +109,34 @@ function createOrderCard(order) {
       </div>
     `;
     
+    const cancelBtn = card.querySelector('.cancel-order-btn');
+    cancelBtn.addEventListener('click', () => {
+        const confirmed = confirm("Are you sure you want to cancel this order? This action cannot be undone.");
+        if (confirmed) {
+            localStorage.removeItem('ProductOdered');
+            card.remove();
+            const emptyOrderMessage = document.createElement('div');
+            emptyOrderMessage.className = 'order-card empty-order-card';
+            emptyOrderMessage.innerHTML = `
+                <div class="card-header">
+                    <h2>Order Details</h2>
+                </div>
+                <div class="section empty-order">
+                    <div class="empty-order-content">
+                        <i class="fas fa-box-open empty-order-icon"></i>
+                        <h3>No Orders Found</h3>
+                        <p class="empty-order-text">It looks like you haven't placed any orders yet. Start exploring our products and make your first purchase!</p>
+                        <a href="Home.html" class="shop-now-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            Start Shopping
+                        </a>
+                    </div>
+                </div>
+            `;
+            document.getElementById('order-details-container').appendChild(emptyOrderMessage);
+        }
+    });
+
+
     document.getElementById('order-details-container').appendChild(card);
   }
